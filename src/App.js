@@ -1,10 +1,12 @@
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Layout } from "./components";
-import { AddPost, routes } from "./pages";
-import Main from "./pages/Main";
+import { routes } from "./pages";
 
 function App() {
+ 
   return (
     <Layout>
       <Routes>
@@ -12,6 +14,8 @@ function App() {
           <Route key={route.path} path={route.path} element={route.component} />
         ))}
       </Routes>
+
+      <ToastContainer position="bottom-right"/>
     </Layout>
   );
 }
